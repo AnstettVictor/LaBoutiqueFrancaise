@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use DateTime;
+
 use App\Classe\Cart;
 use App\Entity\Order;
 use App\Form\OrderType;
@@ -81,8 +82,7 @@ class OrderController extends AbstractController
                 $entityManager->persist($order);
 
             // Enregistret mes produits OderDetails()
-              
-                
+
                 foreach ($cart->getFull() as $product) {
                     $orderDetails = new OrderDetails();
                     $orderDetails->setMyOrder($order);
@@ -93,16 +93,14 @@ class OrderController extends AbstractController
                     $entityManager->persist($orderDetails);
                 }
 
-                $entityManager->flush();
+
+                //$entityManager->flush();
 
                 return $this->render('order/add.html.twig', [
                     'cart' => $cart->getFull(),
                     'carrier' => $carriers,
                     'delivery' => $delivery_content
                 ]);
-            
-                
-
         }
         
         return $this->redirectToRoute('cart');
