@@ -26,7 +26,7 @@ class OrderSuccessController extends AbstractController
 
      
 
-        if (!$order->getIsPaid()) {
+        if ($order->getState() == 0) {
             
             // vider la session cart
 
@@ -35,7 +35,7 @@ class OrderSuccessController extends AbstractController
 
             // modifier le statut is paid a 1
 
-            $order->setIsPaid(1);
+            $order->setState(1);
             $entityManager->flush();
 
              // envoyer un email à notr client 
