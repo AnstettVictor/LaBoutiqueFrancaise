@@ -56,7 +56,7 @@ class StripeController extends AbstractController
 
             'price_data' => [
                 'currency' => 'eur',
-                'unit_amount' => $order->getCarrierPrice() * 100,
+                'unit_amount' => $order->getCarrierPrice(),
                 'product_data' => [
                     'name' => $order->getCarrierName(),
                     'images' => [$YOUR_DOMAIN],
@@ -78,6 +78,8 @@ class StripeController extends AbstractController
             'cancel_url' => $YOUR_DOMAIN . '/commande/erreur/{CHECKOUT_SESSION_ID}',
         ]);
 
+        $order->setStripeSessionId($checkout_session->id);
+        $entityManager->flush();
 
         $response = new JsonResponse(['id' => $checkout_session->id]);
         return $response;
