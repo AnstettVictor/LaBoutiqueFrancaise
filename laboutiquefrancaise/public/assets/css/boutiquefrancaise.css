@@ -3,6 +3,11 @@ body {
     margin-bottom: 50px;
 }
 
+.container, .marketing {
+    margin-bottom: 50px;
+
+}
+
 .navbar-item-custom, .navbar-item-custom a {
     color: #fff;
 }
@@ -14,7 +19,7 @@ body {
     background-color: #dfeaff;
     padding-top: 25px;
     margin-top: 50px;
-   bottom: 0;
+    bottom: 0;
 }
 
 .product-item h5 {
