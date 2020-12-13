@@ -8,6 +8,7 @@ use App\Entity\Order;
 use App\Entity\Product;
 use Stripe\Checkout\Session;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,11 +19,11 @@ class StripeController extends AbstractController
     /**
      * @Route("/commande/create-session/{reference}", name="stripe_create_session")
      */
-    public function index(Cart $cart, $reference, EntityManagerInterface $entityManager): Response
+    public function index(Cart $cart, $reference, EntityManagerInterface $entityManager,  Request $request): Response
     {
         
         $products_for_stripe = [];
-        $YOUR_DOMAIN = 'http://127.0.0.1:8000';
+        $YOUR_DOMAIN = $request->getSchemeAndHttpHost();        ;
 
         $order = $entityManager->getRepository(Order::class)->findOneByReference($reference);
 
