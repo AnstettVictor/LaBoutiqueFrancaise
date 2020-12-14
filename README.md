@@ -8,7 +8,7 @@ Technos : Symfony, Strip, Mailjet, Bootstrap
 
 - Index :
 
-![index](/LaBoutiqueFrancaise/laboutiquefrancaise/Documentation/Dhome.png)
+![index](/Documentation/Dhome.png)
 
 - Login  : 
 
