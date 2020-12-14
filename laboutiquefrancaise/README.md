@@ -1,4 +1,4 @@
-## Pokédex
+## La Boutique Francaise
 
 ### Description
 
@@ -8,7 +8,7 @@ Technos : Symfony, Strip, Mailjet, Bootstrap
 
 - Index :
 
-![index](/Documentation/Dhome.png)
+![index](/LaBoutiqueFrancaise/Documentation/Dhome.png)
 
 - Login  : 
 
