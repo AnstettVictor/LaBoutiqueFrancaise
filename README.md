@@ -2,7 +2,7 @@
 
 ### Description
 
-Technos : Symfony, Strip, Mailjet, Bootstrap
+Technos : Symfony, Stripe, Mailjet, Bootstrap
 
 ### Visuel 
 
@@ -21,3 +21,7 @@ Technos : Symfony, Strip, Mailjet, Bootstrap
 - Easy Admin : 
 
 ![Easy Admin](/Documentation/Deasyadmin.png)
+
+- Stripe : 
+
+![Stripe](/Documentation/Dstripe.png)
